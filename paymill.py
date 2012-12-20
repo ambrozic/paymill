@@ -264,7 +264,7 @@ class Preauthorizations(Endpoint):
 	"""
 	method = "preauthorizations"
 
-	def create(self, amount, currency=PayMill.DEF_CURRENCY, token=None, payment=None):
+	def create(self, amount, currency=Paymill.DEF_CURRENCY, token=None, payment=None):
 		"""
 		preauthorizations create method
 
@@ -328,7 +328,7 @@ class Transactions(Endpoint):
 	"""
 	method = "transactions"
 
-	def create(self, amount, currency=PayMill.DEF_CURRENCY, description=None, client=None, token=None, payment=None, preauthorization=None):
+	def create(self, amount, currency=Paymill.DEF_CURRENCY, description=None, client=None, token=None, payment=None, preauthorization=None):
 		"""
 		transactions endpoint create method
 
@@ -557,7 +557,7 @@ class Offers(Endpoint):
 	"""
 	method = "offers"
 
-	def create(self, amount, interval, name, currency=PayMill.DEF_CURRENCY):
+	def create(self, amount, interval, name, currency=Paymill.DEF_CURRENCY):
 		"""
 		offers endpoint create method
 
