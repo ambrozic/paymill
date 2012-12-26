@@ -42,8 +42,7 @@ class Paymill():
 		return self.repr()
 
 	def repr(self):
-		return u"%s" % ("<PayMill: private_key='%s'>" % (self.PRIVATE_KEY,)
-		)
+		return u"%s" % ("<PayMill: private_key='%s'>" % (self.PRIVATE_KEY,))
 
 	def __getattr__(self, item):
 		"""
@@ -69,7 +68,7 @@ class Paymill():
 		request = urllib2.Request(url, headers=self.HEADERS)
 		base64string = base64.encodestring("%s:%s" % (self.PRIVATE_KEY, "")).replace("\n", "")
 		request.add_header("Authorization", "Basic %s" % base64string)
-		return  request
+		return request
 
 	def delete(self, method, id):
 		"""
@@ -105,7 +104,7 @@ class Paymill():
 		if data is None: raise ValueError("data should not be None for post requests")
 		if not isinstance(data, (dict,)): raise ValueError("data should be of type dict")
 
-		data = dict((key, val)for key, val in data.iteritems() if val is not None)
+		data = dict((key, val) for key, val in data.iteritems() if val is not None)
 		request = self.client(method, id)
 		request.add_data(urllib.urlencode(data))
 		return self._response(request)
